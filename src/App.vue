@@ -1,12 +1,12 @@
 <template>
   <div id="app">
-    <dashboard/>
     <router-view/>
+
   </div>
 </template>
 
 <script>
-import dashboard from './views/dashboard/index'
+
 export default {
   name: 'App',
   data() {
@@ -15,8 +15,8 @@ export default {
     }
   },
   components:{
-    dashboard
-  }
+
+ }
 }
 </script>
 
@@ -26,5 +26,9 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
+  margin: 0;
+}
+body{
+  margin: 0;
 }
 </style>

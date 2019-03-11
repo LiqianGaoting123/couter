@@ -8,6 +8,10 @@ import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import locale from 'element-ui/lib/locale/lang/en' // lang i18n
 
+//配置全局的axios默认值（可选）
+import axios from 'axios'
+Vue.prototype.$http = axios
+
 Vue.use(ElementUI, { locale })
 
 Vue.config.productionTip = false
