@@ -5,13 +5,9 @@
         <i class="el-icon-menu"></i>
       </div>
       <div class="name">{{name}}</div>
-
-      <el-input
-        v-model="input"
-        placeholder="请输入内容"
-        icon="el-icon-search"
-        style="width:20vw;height:3vw;"
-      ></el-input>
+      <div class="textInput">
+        <el-input v-model="input" suffix-icon="el-icon-search" placeholder="请输入内容" ></el-input>
+      </div>
     </div>
 
     <el-menu
@@ -35,7 +31,7 @@
           <span slot="title">教务中心</span>
         </template>
         <el-menu-item-group>
-          <el-menu-item index="1-1">学员管理</el-menu-item>
+          <el-menu-item index="/bankClass">学员管理</el-menu-item>
           <el-menu-item index="/grade">班级管理</el-menu-item>
           <el-menu-item index="/teachers">老师管理</el-menu-item>
           <el-menu-item index="/course">课程/收费</el-menu-item>
@@ -124,5 +120,11 @@ export default {
 .box {
   width: 100%;
   height: 100%;
+}
+.textInput {
+  background-color: rgb(245, 246, 249);
+  width: 20vw;
+  height: 2vw;
+  display: inline-block;
 }
 </style>

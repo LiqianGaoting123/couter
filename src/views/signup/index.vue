@@ -2,7 +2,6 @@
   <div class="user">
     <dashboard></dashboard>
     <div style="margin-left:80px;margin-top:30px;height: 700px;">
-      <div>班级管理</div>
       <div class="box">
         <div class="active">
           <span>报名</span>

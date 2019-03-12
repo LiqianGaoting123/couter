@@ -1,6 +1,7 @@
 <template>
   <div class="app-container">
     <dashboard></dashboard>
+    <div>所有代理商</div>
     <div style="margin-left:15%;margin-top:10px">
     <el-input v-model="searchStr" suffix-icon="el-icon-search" style="width: 20%;margin-bottom:20px" placeholder="请输入搜索内容"></el-input>
     <el-button type="primary">查询</el-button>
@@ -12,11 +13,10 @@
       style="width: 95%"
     >
       <el-table-column prop="id" label="id" align="center"></el-table-column>
-      <el-table-column prop="teamName" label="班级名称" align="center"></el-table-column>
+      <el-table-column prop="name" label="代理名" align="center"></el-table-column>
+      <el-table-column prop="phone" label="手机号" align="center"></el-table-column>
       <el-table-column prop="image" label="头像" align="center"></el-table-column>
-      <el-table-column prop="studentNum" label="人数" align="center"></el-table-column>
-      <el-table-column prop="capacity" label="容量" align="center"></el-table-column>
-      <el-table-column prop="courseName" label="课程名称" align="center"></el-table-column>
+      <el-table-column prop="status" label="状态" align="center"></el-table-column>
     </el-table>
     <div class="block">
       <el-pagination
@@ -34,7 +34,7 @@
 </template>
 
 <script>
-import {getClassListByToken, addClass} from "@/api/class";
+import { getStudentListByToken, getAllStudentList} from "@/api/student";
 import dashboard from "../dashboard/index";
 export default {
   data() {
@@ -42,41 +42,30 @@ export default {
       teams: [
         {
           id: 1,
-          teamName: "a1",
-          image:'',
-          studentNum:'50',
-          capacity:'80',
-          courseName:'艺术'
+          name: "a1",
+          status: "string",
+          phone: '18211745670',
+          image:''
         },
          {
           id: 1,
-          teamName: "a1",
-          image:'',
-          studentNum:'50',
-          capacity:'80',
-          courseName:'艺术'
+          name: "a1",
+          status: "string",
+          phone: '18211745670',
+          image:''
         }, {
           id: 1,
-          teamName: "a1",
-          image:'',
-          studentNum:'50',
-          capacity:'80',
-          courseName:'艺术'
-        }, {
+          name: "a1",
+          status: "string",
+          phone: '18211745670',
+          image:''
+        } ,{
           id: 1,
-          teamName: "a1",
-          image:'',
-          studentNum:'50',
-          capacity:'80',
-          courseName:'艺术'
-        }, {
-          id: 1,
-          teamName: "a1",
-          image:'',
-          studentNum:'50',
-          capacity:'80',
-          courseName:'艺术'
-        },
+          name: "a1",
+          status: "string",
+          phone: '18211745670',
+          image:''
+        }
       ],
       currentPage: 1,
       pagesize: 10,
@@ -111,7 +100,7 @@ export default {
       this.getTeams();
     },
     getTeams() {
-     getClassListByToken().then(response => {
+     getAllStudentList().then(response => {
         console.log(response, "sdll");
         if (response.data.infoCod) {
           this.$message({

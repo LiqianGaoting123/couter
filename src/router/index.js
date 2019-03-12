@@ -9,6 +9,7 @@ import student from '@/views/student/student'
 import signup from '@/views/signup/index'
 import home from '@/views/home/index'
 import login from '@/views/home/login'
+import bankClass  from '@/views/bankClass/index'
 Vue.use(Router)
 export default new Router({
   routes: [
@@ -48,6 +49,10 @@ export default new Router({
     path:'/login',
     name:'login',
     component:login
+  },{
+    path:"/bankClass",
+    name:'bankClass',
+    component:bankClass
   }
   ]
 })
