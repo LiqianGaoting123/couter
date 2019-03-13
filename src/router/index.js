@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import user from '@/views/user/index'
 import grade from '@/views/grade/index'
+import detail from "@/views/grade/detail"
 import teachers from '@/views/teachers/index'
 import course from '@/views/course/index'
 import record from '@/views/record/index'
@@ -10,6 +11,7 @@ import signup from '@/views/signup/index'
 import home from '@/views/home/index'
 import login from '@/views/home/login'
 import bankClass  from '@/views/bankClass/index'
+
 Vue.use(Router)
 export default new Router({
   routes: [
@@ -53,6 +55,10 @@ export default new Router({
     path:"/bankClass",
     name:'bankClass',
     component:bankClass
+  },{
+    path:'/detail',
+    name:'detail',
+    component:detail
   }
   ]
 })
