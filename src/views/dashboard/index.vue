@@ -35,7 +35,7 @@
           <el-menu-item index="/grade">班级管理</el-menu-item>
           <el-menu-item index="/teachers">老师管理</el-menu-item>
           <el-menu-item index="/course">课程/收费</el-menu-item>
-          <el-menu-item index="/record">上课记录</el-menu-item>
+          <el-menu-item index="/record">请假记录</el-menu-item>
         </el-menu-item-group>
       </el-submenu>
       <el-submenu index="3">

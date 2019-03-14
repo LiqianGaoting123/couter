@@ -9,12 +9,6 @@
         placeholder="搜索老师姓名/手机号"
       ></el-input>
       <el-button type="primary">查询</el-button>
-      <el-select v-model="value6" placeholder="请选择">
-        <el-option v-for="item in cities" :key="item.value" :label="item.label" :value="item.value">
-          <span style="float: left">{{ item.label }}</span>
-          <span style="float: right; color: #8492a6; font-size: 13px">{{ item.value }}</span>
-        </el-option>
-      </el-select>
       <el-button type="primary" @click="onSubmit()">添加老师</el-button>
       <el-table
         :data="filterData.slice((currentPage-1)*pagesize,currentPage*pagesize)"
@@ -34,7 +28,7 @@
         <el-table-column prop="courseName" label="课程名称" align="center"></el-table-column>
         <el-table-column label="操作" align="center" fixed="right" width="200">
           <template slot-scope="scope">
-            <el-button @click="handleClick(scope.row)" type="text" size="small">学员管理</el-button>
+            <el-button @click="handleClick(scope.row)" type="text" size="small">删除</el-button>
             <el-button type="text" size="small">编辑</el-button>
           </template>
         </el-table-column>
@@ -103,14 +97,17 @@ export default {
     return {
       fileList: [{ name: "", url: "" }],
       dialogFormVisible: false,
-      value6: '',
-      cities: [{
-          value: 'Beijing',
-          label: '北京'
-        }, {
-          value: 'Shanghai',
-          label: '上海'
-        }],
+      value6: "",
+      cities: [
+        {
+          value: "Beijing",
+          label: "北京"
+        },
+        {
+          value: "Shanghai",
+          label: "上海"
+        }
+      ],
       teams: [
         {
           id: 1,
@@ -193,7 +190,7 @@ export default {
         this.$message.error("新增内容每一项都不准为空");
       } else {
         //每一条都不为空时才向后台发送http请求
-        addClass(this.teams).then(
+        addTeacherToOrg(this.teams).then(
           res => {
             let { errCode, errMsg } = res.data;
             if (!errCode == 1) {

@@ -65,7 +65,7 @@
             action="/upload.do"
             name="picture"
             list-type="picture-card"
-            :limit="1"
+            :limit="2"
             :file-list="fileList"
             :on-exceed="onExceed"
             :before-upload="beforeUpload"
